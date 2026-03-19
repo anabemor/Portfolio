@@ -1,0 +1,4 @@
+/* App.css – limpio (opcional) */
+#root {
+  @apply max-w-6xl mx-auto px-4;
+}
