@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logoAm from "../assets/logoAm.png";
 import { HiMenu, HiX } from "react-icons/hi";
+import { FaFilePdf } from "react-icons/fa";
+import cvPdf from "../assets/cv.pdf";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,10 +51,14 @@ export default function Header() {
           ))}
 
           <motion.a
-            href="/cv.pdf"
-            className="px-4 py-1.5 border-2 border-[#10a7c2] text-[#10a7c2] rounded-full hover:bg-[#10a7c2] hover:text-white transition-all text-[13px] font-semibold"
+            href={cvPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-1.5 border-2 border-[#10a7c2] text-[#10a7c2] rounded-full hover:bg-[#10a7c2] hover:text-white transition-all text-[13px] font-semibold"
             whileHover={{ scale: 1.05 }}
+            title="Abrir CV en PDF"
           >
+            <FaFilePdf className="text-sm" />
             CV
           </motion.a>
         </nav>
@@ -86,9 +92,13 @@ export default function Header() {
           ))}
           <a
             href="/cv.pdf"
-            className="px-4 py-1.5 border-2 border-[#10a7c2] text-[#10a7c2] rounded-full hover:bg-[#10a7c2] hover:text-white transition-colors text-sm font-semibold"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-1.5 border-2 border-[#10a7c2] text-[#10a7c2] rounded-full hover:bg-[#10a7c2] hover:text-white transition-colors text-sm font-semibold"
             onClick={() => setMenuOpen(false)}
+            title="Abrir CV en PDF"
           >
+            <FaFilePdf className="text-sm" />
             CV
           </a>
         </motion.nav>

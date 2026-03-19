@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaFilePdf } from "react-icons/fa";
+import cvPdf from "../assets/cv.pdf";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -70,12 +71,15 @@ export default function Hero() {
             </motion.a>
 
             <motion.a
-              href="/cv.pdf"
+              href={cvPdf}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-2 border-2 border-[#10a7c2] 
                 text-[#10a7c2] font-semibold rounded-full 
                 hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-blue-400 
                 hover:text-white transition text-sm"
               whileHover={{ scale: 1.05 }}
+              title="Abrir CV en PDF"
             >
               <FaFilePdf className="text-base" />
               Mi CV
@@ -83,8 +87,6 @@ export default function Hero() {
           </div>
         </div>
       </motion.div>
-
-    
     </section>
   );
 }
